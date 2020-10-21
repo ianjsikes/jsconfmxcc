@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSpring, config } from 'react-spring/three'
 import { useFrame } from 'react-three-fiber'
 import { easeInOutCubic } from './utils'
 
@@ -16,6 +17,11 @@ export const Shape = ({ position = [0, 0, 0] }) => {
     meshRef.current.scale.y = 1 + t * 3
   })
 
+  const { color } = useSpring({
+    color: active ? 'hotpink' : 'lightblue',
+    config: config.wobbly,
+  })
+
   return (
     <mesh
       ref={meshRef}
@@ -25,7 +31,7 @@ export const Shape = ({ position = [0, 0, 0] }) => {
       receiveShadow
     >
       <sphereBufferGeometry args={[0.5, 32, 32]} />
-      <meshStandardMaterial color="green" roughness={0} metalness={0.1} />
+      <meshStandardMaterial color={color} roughness={0} metalness={0.1} />
     </mesh>
   )
 }
