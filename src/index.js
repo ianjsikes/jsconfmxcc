@@ -26,10 +26,6 @@ const App = () => {
       <fog attach="fog" args={['cyan', 0, 40]} />
       <Lights />
       <Floor />
-      <mesh castShadow receiveShadow>
-        <sphereBufferGeometry args={[1, 32, 32]} />
-        <meshStandardMaterial color="green" />
-      </mesh>
     </Canvas>
   )
 }
