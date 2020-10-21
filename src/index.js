@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import { Canvas } from 'react-three-fiber'
-import { softShadows } from '@react-three/drei'
+import { OrbitControls, softShadows } from '@react-three/drei'
 import './styles.css'
 import { Lights } from './Lights'
 import { ShapeCluster } from './ShapeCluster'
@@ -28,6 +28,7 @@ const App = () => {
       <Lights />
       <Floor />
       <ShapeCluster />
+      <OrbitControls />
     </Canvas>
   )
 }
