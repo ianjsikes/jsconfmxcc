@@ -9,7 +9,12 @@ const App = () => {
       colorManagement
       shadowMap
       camera={{ position: [-5, 10, 10], fov: 60 }}
-    ></Canvas>
+    >
+      <mesh>
+        <sphereBufferGeometry args={[1, 32, 32]} />
+        <meshStandardMaterial color="green" />
+      </mesh>
+    </Canvas>
   )
 }
 
