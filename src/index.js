@@ -4,6 +4,7 @@ import { Canvas } from 'react-three-fiber'
 import { softShadows } from '@react-three/drei'
 import './styles.css'
 import { Lights } from './Lights'
+import { ShapeCluster } from './ShapeCluster'
 
 softShadows()
 
@@ -26,6 +27,7 @@ const App = () => {
       <fog attach="fog" args={['cyan', 0, 40]} />
       <Lights />
       <Floor />
+      <ShapeCluster />
     </Canvas>
   )
 }
