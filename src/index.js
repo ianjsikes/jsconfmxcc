@@ -1,8 +1,11 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import { Canvas } from 'react-three-fiber'
+import { softShadows } from '@react-three/drei'
 import './styles.css'
 import { Lights } from './Lights'
+
+softShadows()
 
 const Floor = () => {
   return (
@@ -20,6 +23,7 @@ const App = () => {
       shadowMap
       camera={{ position: [-5, 10, 10], fov: 60 }}
     >
+      <fog attach="fog" args={['cyan', 0, 40]} />
       <Lights />
       <Floor />
       <mesh castShadow receiveShadow>
