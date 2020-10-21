@@ -12,12 +12,13 @@ export const Shape = ({ position = [0, 0, 0] }) => {
     t = easeInOutCubic((1 + t) / 2)
 
     meshRef.current.position.y = position[1] + t * 4
+    meshRef.current.scale.y = 1 + t * 3
   })
 
   return (
     <mesh ref={meshRef} position={position} castShadow receiveShadow>
       <sphereBufferGeometry args={[0.5, 32, 32]} />
-      <meshStandardMaterial color="green" />
+      <meshStandardMaterial color="green" roughness={0} metalness={0.1} />
     </mesh>
   )
 }
