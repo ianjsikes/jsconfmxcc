@@ -6,7 +6,8 @@ export const Shape = ({ position = [0, 0, 0] }) => {
 
   useFrame((state) => {
     const time = state.clock.getElapsedTime()
-    meshRef.current.position.y = time
+    const t = Math.sin(time)
+    meshRef.current.position.y = t
   })
 
   return (
